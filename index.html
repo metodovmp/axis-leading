@@ -20,19 +20,29 @@ body{
   background-image: radial-gradient(circle at 50% 0%, rgba(168,85,247,0.15) 0%, transparent 60%),
   url('https://grainy-gradients.vercel.app/noise.svg');
   position:relative;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
 }
+/* TOP BAR OTIMIZADA - PÍLULA CURTA ROXA */
 .top-bar{
-  background:#FF0000;
+  background:#0A0A0A;
+  border:1.5px solid #A855F7;
   color:#fff;
   text-align:center;
-  padding:14px 12px;
-  font-weight:900;
-  font-size:18px;
-  line-height:1.2;
-  letter-spacing:-0.3px;
+  padding:12px 22px;
+  font-weight:600;
+  font-size:12.5px;
+  width:fit-content;
+  max-width:88%;
+  line-height:1.35;
+  letter-spacing:0.8px;
   text-transform:uppercase;
+  border-radius:14px;
+  margin:16px auto 0;
+  box-shadow:0 0 18px rgba(168,85,247,0.15);
 }
-.content{padding:28px 20px 40px; text-align:center;}
+.content{padding:28px 20px 40px; text-align:center; width:100%;}
 .logo{
   font-size:13px; letter-spacing:5px; color:#8E8E93; font-weight:600; margin-bottom:22px;
 }
@@ -57,20 +67,11 @@ h1 span{color:#A855F7; display:block;}
 }
 .video{
   width:100%; aspect-ratio:16/9; background:#000; border-radius:18px;
-  border:1.5px solid #A855F7; position:relative;
+  border:none;
+  position:relative;
   display:flex; align-items:center; justify-content:center;
-  box-shadow:0 0 25px rgba(168,85,247,0.35); margin-bottom:32px; overflow:hidden;
+  box-shadow:none; margin-bottom:32px; overflow:hidden;
 }
-.video::before{
-  content:''; position:absolute; inset:0;
-  background: radial-gradient(ellipse at center, rgba(168,85,247,0.3) 0%, transparent 70%);
-}
-.play{
-  width:68px; height:68px; background:#A855F7; border-radius:50%;
-  display:flex; align-items:center; justify-content:center;
-  z-index:2; box-shadow:0 0 20px rgba(168,85,247,0.6);
-}
-.play::after{content:'▶'; color:#fff; font-size:22px; margin-left:4px;}
 .rec{
   font-size:22px; font-weight:900; color:#fff; letter-spacing:-0.5px; margin-bottom:12px; text-transform:uppercase;
 }
@@ -78,17 +79,20 @@ h1 span{color:#A855F7; display:block;}
 .txt2{font-size:13.5px; color:#C7C7CC; line-height:1.5; margin-bottom:26px;}
 .btn{
   display:block; width:100%; background:#A855F7; color:#fff;
-  padding:18px; border-radius:999px; font-weight:900; font-size:15px;
-  text-decoration:none; letter-spacing:0.3px; margin-bottom:12px;
+  padding:20px 18px; border-radius:999px; font-weight:900; font-size:15px;
+  text-decoration:none; letter-spacing:0.5px; margin-bottom:12px;
   box-shadow:0 10px 25px rgba(168,85,247,0.4);
+  border:none; cursor:pointer;
+  transition: all 0.2s ease;
+  text-transform:uppercase;
 }
+.btn:active{transform:scale(0.97);}
 .under{font-size:11px; color:#A1A1A6; margin-bottom:22px;}
 .garant{font-size:14px; font-weight:700; color:#fff; margin-bottom:10px;}
-.garant span, .dev span{color:#A855F7;}
+.garant span{color:#A855F7;}
 .dev{font-size:14px; color:#fff; font-weight:600; line-height:1.4; margin-bottom:30px;}
+.dev span{color:#A855F7;}
 .div{height:1px; background:rgba(168,85,247,0.4); margin-bottom:22px;}
-
-/* FOOTER CORRIGIDO */
 .foot{line-height:1.6; padding-top:8px;}
 .foot-title{
   font-size:13px; 
@@ -113,7 +117,7 @@ h1 span{color:#A855F7; display:block;}
 </head>
 <body>
 <div class="page">
-  <div class="top-bar">⚠️ SÓ HOJE: POR APENAS R$67.<br>DEPOIS VOLTA PARA R$167</div>
+  <div class="top-bar">SÓ HOJE: POR APENAS R$67. DEPOIS VOLTA PARA R$167</div>
   <div class="content">
     <div class="logo">AI • AXIS</div>
     <div class="badge">INTELIGÊNCIA TURBO</div>
@@ -124,22 +128,21 @@ h1 span{color:#A855F7; display:block;}
     <div class="sub-g">Em menos de 4 minutos: O erro que 9 em cada 10 empresários cometem e nem percebem.</div>
 
     <div class="video">
-      <div class="play"></div>
+      <!-- COLE SEU EMBED AQUI DENTRO -->
     </div>
 
     <div class="rec">VOCÊ SE RECONHECE NISSO?</div>
     <div class="txt">Talvez o problema nunca tenha sido o que você faz.<br>Mas como sua oferta está sendo percebida.</div>
     <div class="txt2">Agora que você entendeu o problema, existe um sistema para mudar isso.</div>
 
-    <a href="SEU_LINK_CAKTO_AQUI" class="btn">QUERO ATIVAR MEU PRO</a>
+    <a href="SEU_LINK_CAKTO_AQUI" id="btn-checkout" class="btn">EU QUERO O AXIS</a>
     <div class="under">Acesso Imediato • 100% Online.</div>
 
     <div class="garant">Garantia incondicional de <span>7 dias.</span></div>
-    <div class="dev">Se não fizer sentido para você, devolvemos <span>100%<br>do</span> seu investimento.</div>
+    <div class="dev">Se não fizer sentido para você, devolvemos <span>100%</span><br>do seu investimento.</div>
 
     <div class="div"></div>
     
-    <!-- FOOTER AJUSTADO COMO VOCÊ PEDIU -->
     <div class="foot">
       <div class="foot-title">AI - AXIS © 2026</div>
       <div class="foot-desc">
@@ -153,5 +156,19 @@ h1 span{color:#A855F7; display:block;}
 
   </div>
 </div>
+
+<script>
+document.getElementById('btn-checkout').addEventListener('click', function(e){
+  e.preventDefault();
+  const btn = this;
+  const link = btn.getAttribute('href');
+  btn.textContent = 'Diagnosticando...';
+  btn.style.opacity = '0.8';
+  btn.style.pointerEvents = 'none';
+  setTimeout(function(){
+    window.location.href = link;
+  }, 2000);
+});
+</script>
 </body>
 </html>
